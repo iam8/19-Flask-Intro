@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route("/add")
 def add_nums():
     """
-    Calculate and return the result of adding two numbers.
+    Calculate and return the result of adding two numbers (query parameters 'a' and 'b').
     """
 
     a = request.args["a"]
@@ -23,7 +23,7 @@ def add_nums():
 @app.route("/sub")
 def subtract_nums():
     """
-    Calculate and return the result of subtracting two numbers.
+    Calculate and return the result of subtracting two numbers (query parameters 'a' and 'b')..
     """
 
     a = request.args["a"]
@@ -35,7 +35,7 @@ def subtract_nums():
 @app.route("/mult")
 def multiply_nums():
     """
-    Calculate and return the result of multiplying two numbers.
+    Calculate and return the result of multiplying two numbers (query parameters 'a' and 'b')..
     """
 
     a = request.args["a"]
@@ -47,7 +47,7 @@ def multiply_nums():
 @app.route("/div")
 def divide_nums():
     """
-    Calculate and return the result of dividing two numbers.
+    Calculate and return the result of dividing two numbers (query parameters 'a' and 'b')..
     """
 
     a = request.args["a"]
@@ -60,7 +60,7 @@ def divide_nums():
 def perform_operation(operation):
     """
     Calculate and return the result of a given math operation between two numbers (add, sub, mult,
-    div).
+    or div, with query parameters 'a' and 'b').
     """
 
     # 'Dispatch dictionary'. Learned this last year. Super concise
