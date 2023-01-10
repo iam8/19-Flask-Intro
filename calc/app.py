@@ -1,6 +1,10 @@
 # Ioana A Mititean
 # 19.1 - Flask Greet and Calc
 
+# NOTE: I wrote a bonus function for the route "/math/<operation>" that performs any of the 4
+# math operations on 2 numbers. This wasn't requested in the exercise instructions, but the test
+# file included tests for such a function.
+
 from flask import Flask, request
 from operations import add, sub, mult, div
 
