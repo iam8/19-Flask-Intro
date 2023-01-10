@@ -9,6 +9,10 @@ app = Flask(__name__)
 
 @app.route("/add")
 def add_nums():
+    """
+    Calculate and return the result of adding two numbers.
+    """
+
     a = request.args["a"]
     b = request.args["b"]
 
@@ -17,6 +21,10 @@ def add_nums():
 
 @app.route("/sub")
 def subtract_nums():
+    """
+    Calculate and return the result of subtracting two numbers.
+    """
+
     a = request.args["a"]
     b = request.args["b"]
 
@@ -25,6 +33,10 @@ def subtract_nums():
 
 @app.route("/mult")
 def multiply_nums():
+    """
+    Calculate and return the result of multiplying two numbers.
+    """
+
     a = request.args["a"]
     b = request.args["b"]
 
@@ -33,7 +45,32 @@ def multiply_nums():
 
 @app.route("/div")
 def divide_nums():
+    """
+    Calculate and return the result of dividing two numbers.
+    """
+
     a = request.args["a"]
     b = request.args["b"]
 
     return str(div(float(a), float(b)))
+
+
+@app.route("/math/<operation>")
+def perform_operation(operation):
+    """
+    Calculate and return the result of a given math operation between two numbers (add, sub, mult,
+    div).
+    """
+
+    ops_dict = {
+        "add": add,
+        "sub": sub,
+        "mult": mult,
+        "div": div
+    }
+
+    a = request.args["a"]
+    b = request.args["b"]
+
+    result = ops_dict[operation](float(a), float(b))
+    return str(result)
