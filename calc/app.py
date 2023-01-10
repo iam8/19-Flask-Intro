@@ -12,7 +12,7 @@ def add_nums():
     a = request.args["a"]
     b = request.args["b"]
 
-    return add(a, b)
+    return str(add(float(a), float(b)))
 
 
 @app.route("/sub")
@@ -20,7 +20,7 @@ def subtract_nums():
     a = request.args["a"]
     b = request.args["b"]
 
-    return sub(a, b)
+    return str(sub(float(a), float(b)))
 
 
 @app.route("/mult")
@@ -28,12 +28,12 @@ def multiply_nums():
     a = request.args["a"]
     b = request.args["b"]
 
-    return mult(a, b)
+    return str(mult(float(a), float(b)))
 
 
-@app.route("div")
+@app.route("/div")
 def divide_nums():
     a = request.args["a"]
     b = request.args["b"]
 
-    return div(a, b)
+    return str(div(float(a), float(b)))
